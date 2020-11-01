@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: crimson;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+section article {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  justify-content: center;
+  border-radius: 100%;
+  border: 20px solid #fff;
+  background: #fff;
+  box-shadow: inset 0px 0px 2px 1px #eee;
+  background-image: url("images.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+.clock::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 8px;
+  width: 8px;
+  background: #111;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+#second,
+#minute,
+#hour {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+#second {
+  z-index: 3;
+}
+
+#minute {
+  z-index: 2;
+}
+
+#hour {
+  z-index: 1;
+}
+
+#second::before,
+#minute::before,
+#hour::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+}
+
+#second::before {
+  height: 120px;
+  width: 2px;
+  background: crimson;
+}
+
+#second::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0);
+  height: 20px;
+  width: 2px;
+  background: crimson;
+}
+
+#minute::before {
+  height: 100px;
+  width: 4px;
+  background: #999;
+}
+
+#hour::before {
+  height: 70px;
+  width: 5px;
+  background: #777;
+}
+
+#digitalClock {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  font-size: 16px;
+  padding: 2px 6px;
+  z-index: 3;
+  border-radius: 2px;
+  box-shadow: inset 0px 0px 2px 1px #eee;
+  background: #efefef;
+  transform: translate(-50%);
+  color: #111;
+  font-weight: 500;
+}
